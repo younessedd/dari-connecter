@@ -1,0 +1,18 @@
+<svg width="480" height="320" viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="giotmesh" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#00FFFF" offset="0"/>
+      <stop stop-color="#8A2BE2" offset="1"/>
+    </linearGradient>
+  </defs>
+  <rect x="14" y="14" width="452" height="292" rx="28" fill="url(#giotmesh)" opacity="0.12" stroke="#8A2BE2" stroke-opacity="0.3"/>
+  <circle cx="160" cy="120" r="16" fill="#00FFFF"/>
+  <circle cx="320" cy="120" r="16" fill="#8A2BE2"/>
+  <circle cx="240" cy="220" r="16" fill="#FF6600"/>
+  <circle cx="240" cy="80" r="12" fill="#E8ECFF"/>
+  <circle cx="120" cy="210" r="12" fill="#E8ECFF"/>
+  <circle cx="360" cy="210" r="12" fill="#E8ECFF"/>
+  <path d="M160 120 240 80 320 120 240 220 120 210 160 120" stroke="#00FFFF" stroke-width="10" stroke-linejoin="round" fill="#0A0A0A" opacity="0.9"/>
+  <path d="M240 80l120 130" stroke="#8A2BE2" stroke-width="8" stroke-dasharray="14 12" stroke-linecap="round"/>
+  <path d="M240 80 120 210" stroke="#8A2BE2" stroke-width="8" stroke-dasharray="14 12" stroke-linecap="round"/>
+</svg>

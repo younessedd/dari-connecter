@@ -1,1373 +1,269 @@
 <!DOCTYPE html>
-<html lang="en" class="dark-mode">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DARI CONNECTER - Your Home. Your Control. Your Future.</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            /* Dark Mode Variables */
-            --bg-primary: #0a0e17;
-            --bg-secondary: #131a2e;
-            --bg-card: #1a2238;
-            --text-primary: #f5f7ff;
-            --text-secondary: #b0b8d9;
-            --accent-blue: #0ea5e9;
-            --accent-electric: #3b82f6;
-            --accent-sky: #38bdf8;
-            --accent-red: #ef4444;
-            --gradient-primary: linear-gradient(90deg, var(--accent-electric), var(--accent-sky));
-            --gradient-secondary: linear-gradient(90deg, var(--accent-sky), var(--accent-blue));
-            --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.3);
-            --shadow-subtle: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-            --border-radius: 12px;
-        }
-        
-        .light-mode {
-            /* Light Mode Variables */
-            --bg-primary: #f8fafc;
-            --bg-secondary: #e2e8f0;
-            --bg-card: #ffffff;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --accent-blue: #0ea5e9;
-            --accent-electric: #3b82f6;
-            --accent-sky: #38bdf8;
-            --accent-red: #ef4444;
-            --shadow-glow: 0 0 15px rgba(59, 130, 246, 0.2);
-            --shadow-subtle: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            transition: var(--transition);
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4, h5 {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgba(10, 14, 23, 0.9);
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
-            padding: 20px 0;
-        }
-        
-        .light-mode header {
-            background-color: rgba(248, 250, 252, 0.9);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-        
-        .logo-icon {
-            color: var(--accent-electric);
-            font-size: 2rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-        }
-        
-        .nav-links a:hover {
-            color: var(--accent-sky);
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: var(--transition);
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .theme-toggle {
-            background: var(--bg-card);
-            border: none;
-            width: 50px;
-            height: 26px;
-            border-radius: 50px;
-            position: relative;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            padding: 0 5px;
-        }
-        
-        .theme-toggle::before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--accent-sky);
-            transition: transform 0.3s ease;
-        }
-        
-        .dark-mode .theme-toggle::before {
-            transform: translateX(0);
-        }
-        
-        .light-mode .theme-toggle::before {
-            transform: translateX(24px);
-        }
-        
-        .theme-icon {
-            font-size: 12px;
-            z-index: 1;
-        }
-        
-        .theme-icon.sun {
-            color: #fbbf24;
-            margin-right: auto;
-        }
-        
-        .theme-icon.moon {
-            color: #f5f7ff;
-            margin-left: auto;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding-top: 100px;
-        }
-        
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: var(--bg-primary);
-            overflow: hidden;
-        }
-        
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            background: var(--accent-electric);
-            opacity: 0.3;
-            animation: float 15s infinite linear;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0) translateX(0); }
-            25% { transform: translateY(-20px) translateX(10px); }
-            50% { transform: translateY(-10px) translateX(20px); }
-            75% { transform: translateY(-30px) translateX(5px); }
-        }
-        
-        .grid-line {
-            position: absolute;
-            background: linear-gradient(90deg, transparent, var(--accent-sky), transparent);
-            height: 1px;
-            width: 100%;
-            opacity: 0.1;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 0 20px;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: textGlow 3s infinite alternate;
-        }
-        
-        @keyframes textGlow {
-            0% { filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.5)); }
-            100% { filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.8)); }
-        }
-        
-        .hero-subtitle {
-            font-size: 1.3rem;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 40px;
-        }
-        
-        .btn {
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: var(--transition);
-            font-family: 'Poppins', sans-serif;
-            cursor: pointer;
-            border: none;
-        }
-        
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: white;
-            box-shadow: var(--shadow-glow);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--accent-electric);
-            border: 2px solid var(--accent-electric);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--accent-electric);
-            color: white;
-            transform: translateY(-3px);
-        }
-        
-        /* Section Common Styles */
-        section {
-            padding: 100px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-            font-size: 2.5rem;
-        }
-        
-        .gradient-text {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
-        }
-        
-        /* Philosophy Section */
-        .philosophy-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        
-        .philosophy-card {
-            background: var(--bg-card);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: var(--shadow-subtle);
-            transition: var(--transition);
-            border: 1px solid rgba(59, 130, 246, 0.1);
-        }
-        
-        .philosophy-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-glow);
-            border-color: var(--accent-electric);
-        }
-        
-        .philosophy-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background: var(--bg-card);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: var(--shadow-subtle);
-            transition: var(--transition);
-            border: 1px solid rgba(59, 130, 246, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 3px;
-            background: var(--gradient-primary);
-            transition: left 0.5s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-glow);
-        }
-        
-        .service-card:hover::before {
-            left: 0;
-        }
-        
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--accent-sky);
-        }
-        
-        .service-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--text-primary);
-        }
-        
-        /* Features Section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-        }
-        
-        .feature-card {
-            background: var(--bg-card);
-            border-radius: var(--border-radius);
-            padding: 25px;
-            text-align: center;
-            transition: var(--transition);
-            border: 1px solid rgba(59, 130, 246, 0.1);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-glow);
-            border-color: var(--accent-sky);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        /* App Showcase */
-        .app-showcase {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-        
-        .app-content {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .app-mockup {
-            flex: 1;
-            min-width: 300px;
-            position: relative;
-            text-align: center;
-        }
-        
-        .phone-mockup {
-            width: 280px;
-            height: 560px;
-            background: var(--bg-card);
-            border-radius: 40px;
-            margin: 0 auto;
-            position: relative;
-            box-shadow: var(--shadow-glow);
-            border: 10px solid var(--bg-card);
-            overflow: hidden;
-        }
-        
-        .phone-screen {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-            border-radius: 30px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .app-info {
-            margin-top: 30px;
-            color: var(--text-secondary);
-        }
-        
-        .app-buttons {
-            display: flex;
-            gap: 20px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-        
-        /* System Architecture */
-        .architecture {
-            background: var(--bg-secondary);
-            border-radius: var(--border-radius);
-            padding: 60px 40px;
-            margin-top: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .arch-flow {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            position: relative;
-        }
-        
-        .arch-step {
-            text-align: center;
-            padding: 20px;
-            min-width: 150px;
-            z-index: 2;
-            position: relative;
-        }
-        
-        .arch-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--bg-card);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            font-size: 1.8rem;
-            color: var(--accent-sky);
-            border: 2px solid var(--accent-electric);
-        }
-        
-        .arch-line {
-            position: absolute;
-            top: 35px;
-            left: 20%;
-            width: 60%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-electric), var(--accent-sky), var(--accent-electric));
-            z-index: 1;
-        }
-        
-        /* Projects Gallery */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .project-card {
-            background: var(--bg-card);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-subtle);
-            transition: var(--transition);
-            position: relative;
-            cursor: pointer;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-glow);
-        }
-        
-        .project-image {
-            height: 200px;
-            background: linear-gradient(135deg, var(--accent-electric), var(--accent-sky));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-        
-        .project-info {
-            padding: 20px;
-        }
-        
-        /* Contact Section */
-        .contact-container {
-            display: flex;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 15px;
-            border-radius: var(--border-radius);
-            background: var(--bg-card);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            color: var(--text-primary);
-            font-family: 'Poppins', sans-serif;
-            transition: var(--transition);
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-electric);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .contact-method {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--bg-secondary);
-            padding: 60px 0 30px;
-            text-align: center;
-        }
-        
-        .footer-logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent-sky);
-        }
-        
-        .copyright {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(59, 130, 246, 0.1);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-            }
-            
-            .nav-links {
-                gap: 20px;
-            }
-            
-            .arch-step {
-                min-width: 120px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: var(--bg-card);
-                flex-direction: column;
-                padding: 20px;
-                gap: 15px;
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: var(--transition);
-                box-shadow: var(--shadow-subtle);
-            }
-            
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 300px;
-                text-align: center;
-            }
-            
-            .arch-flow {
-                justify-content: center;
-                gap: 40px;
-            }
-            
-            .arch-line {
-                display: none;
-            }
-            
-            section {
-                padding: 70px 0;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .services-grid, .features-grid, .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .app-buttons {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DARI CONNECTER | Next-Gen Smart Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/services.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/apps.css" />
+  <link rel="stylesheet" href="css/popups.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">
-                    <i class="fas fa-bolt logo-icon"></i>
-                    DARI CONNECTER
-                </a>
-                
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#philosophy">Philosophy</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#app">App</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                
-                <button class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-sun theme-icon sun"></i>
-                    <i class="fas fa-moon theme-icon moon"></i>
-                </button>
-                
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
-        </div>
-    </header>
+  <div class="neon-grid"></div>
+  <header class="nav">
+    <div class="nav__logo">
+      <span class="logo-icon">⌁</span>
+      <div>
+        <p class="nav__title">DARI CONNECTER</p>
+        <p class="nav__subtitle">Smart Tech Platform</p>
+      </div>
+    </div>
+    <nav class="nav__links">
+      <a href="#hero" class="nav__link active">Home</a>
+      <a href="#services" class="nav__link">Services</a>
+      <a href="#projects" class="nav__link">Projects</a>
+      <a href="#apps" class="nav__link">Apps</a>
+      <a href="#contact" class="nav__link">Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <button id="themeToggle" aria-label="Toggle theme">☾</button>
+      <button id="menuToggle" class="nav__burger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-bg" id="heroBg"></div>
-        
-        <div class="container">
-            <div class="hero-content">
-                <h1>Next-Generation Smart Home & IoT Control</h1>
-                <p class="hero-subtitle">Control lighting, automation, robotics, and IoT systems from one intelligent platform. Your Home. Your Control. Your Future.</p>
-                
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">Start Project</a>
-                    <a href="#app" class="btn btn-secondary">View Demo</a>
-                </div>
-            </div>
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Smart Home · IoT · Robotics · Automation</p>
+        <h1 class="hero__title">
+          Building the next-generation <span>connected</span> experiences.
+        </h1>
+        <p class="hero__subtitle">
+          From homes to industries, I design intelligent systems that sense, decide, and act. Explore my smart platforms, robotics solutions, and IoT services.
+        </p>
+        <div class="hero__actions">
+          <button class="btn btn-primary" data-scroll="#services">Explore Services</button>
+          <button class="btn btn-ghost" data-scroll="#projects">View Projects</button>
         </div>
+        <div class="hero__apps">
+          <span>Apps:</span>
+          <div class="chip">DARI CONNECTER</div>
+          <div class="chip">FiveStarApp</div>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="orbital">
+          <div class="orbital__core">
+            <div class="core-glow"></div>
+            <div class="core-dot"></div>
+          </div>
+          <div class="orbital__ring ring-1"></div>
+          <div class="orbital__ring ring-2"></div>
+          <div class="orbital__ring ring-3"></div>
+        </div>
+        <div class="floating-icons">
+          <div class="floating-icon" data-speed="2">
+            <img src="images/iot.svg" alt="IoT" />
+            <span>IoT Mesh</span>
+          </div>
+          <div class="floating-icon" data-speed="1.2">
+            <img src="images/home.svg" alt="Smart Home" />
+            <span>Smart Home</span>
+          </div>
+          <div class="floating-icon" data-speed="1.6">
+            <img src="images/robot.svg" alt="Robotics" />
+            <span>Robotics</span>
+          </div>
+          <div class="floating-icon" data-speed="1.1">
+            <img src="images/industry.svg" alt="Automation" />
+            <span>Automation</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Philosophy Section -->
-    <section id="philosophy">
-        <div class="container">
-            <h2 class="section-title">Our <span class="gradient-text">Philosophy</span></h2>
-            
-            <div class="philosophy-items">
-                <div class="philosophy-card">
-                    <div class="philosophy-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>Intelligent Automation</h3>
-                    <p>We believe in creating smart systems that learn from your habits and adapt to your lifestyle, providing seamless automation that feels natural.</p>
-                </div>
-                
-                <div class="philosophy-card">
-                    <div class="philosophy-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Privacy & Security First</h3>
-                    <p>Your data belongs to you. We design systems with end-to-end encryption and local control options to ensure your privacy is never compromised.</p>
-                </div>
-                
-                <div class="philosophy-card">
-                    <div class="philosophy-icon">
-                        <i class="fas fa-infinity"></i>
-                    </div>
-                    <h3>Future-Proof Design</h3>
-                    <p>Our solutions are modular and upgradable, ensuring your smart home evolves with technology without requiring complete overhauls.</p>
-                </div>
-            </div>
-        </div>
+    <section id="services" class="section services">
+      <div class="section__header">
+        <p class="eyebrow">Capabilities</p>
+        <h2>Services engineered for intelligent environments</h2>
+        <p class="section__desc">Each solution is crafted with secure connectivity, automation, and delightful user experience.</p>
+      </div>
+      <div id="servicesGrid" class="services__grid" aria-live="polite"></div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <h2 class="section-title">Our <span class="gradient-text">Services</span></h2>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3 class="service-title">Smart Home Installation</h3>
-                    <p>Professional installation of lighting, security, climate control, and entertainment systems with seamless integration.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                    <h3 class="service-title">IoT System Design</h3>
-                    <p>Custom IoT solutions for homes and businesses, from sensor networks to cloud-connected dashboards.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3 class="service-title">ESP32 & Arduino Programming</h3>
-                    <p>Custom firmware development for ESP32, Arduino, and other microcontrollers to bring your IoT ideas to life.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="service-title">Custom Automation Projects</h3>
-                    <p>Tailored automation solutions that integrate multiple systems into cohesive, easy-to-control environments.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3 class="service-title">Robotics Prototyping</h3>
-                    <p>Design and prototyping of robotic systems for home assistance, security, and specialized applications.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
-                    <h3 class="service-title">Mobile & Web Control Dashboards</h3>
-                    <p>Custom control interfaces for smartphones, tablets, and computers with real-time monitoring and control.</p>
-                </div>
-            </div>
-        </div>
+    <section id="projects" class="section projects">
+      <div class="section__header">
+        <p class="eyebrow">Showcase</p>
+        <h2>Project gallery</h2>
+        <p class="section__desc">IoT deployments, robotics builds, and automation platforms brought to life.</p>
+      </div>
+      <div id="projectsGrid" class="projects__grid" aria-live="polite"></div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features">
-        <div class="container">
-            <h2 class="section-title">Platform <span class="gradient-text">Features</span></h2>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>Smart Lighting Control</h3>
-                    <p>Control every light in your home with schedules, scenes, and voice commands.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-plug"></i>
-                    </div>
-                    <h3>Power Outlets</h3>
-                    <p>Smart plugs and outlets with energy monitoring and remote control capabilities.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>Automation</h3>
-                    <p>Create complex automation routines with triggers, conditions, and actions.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Robotics & Arduino</h3>
-                    <p>Integrate custom robotics and microcontroller projects into your smart home.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-wifi"></i>
-                    </div>
-                    <h3>WiFi/Bluetooth Control</h3>
-                    <p>Control devices locally via WiFi or Bluetooth with optional cloud connectivity.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Security First</h3>
-                    <p>End-to-end encryption and secure local communication protocols.</p>
-                </div>
+    <section id="apps" class="section apps">
+      <div class="section__header">
+        <p class="eyebrow">Mobile Apps</p>
+        <h2>DARI CONNECTER</h2>
+        <p class="section__desc">Your smart home and IoT control center—free, intuitive, and powerful.</p>
+      </div>
+      <div class="apps__showcase">
+        <div class="apps__mockups">
+          <div class="phone-mockup">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <img src="images/app-screen-home.svg" alt="DARI CONNECTER home screen" />
+              </div>
             </div>
+            <p class="mockup-caption">Dashboard</p>
+          </div>
+          <div class="phone-mockup">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <img src="images/app-screen-devices.svg" alt="DARI CONNECTER devices screen" />
+              </div>
+            </div>
+            <p class="mockup-caption">Devices</p>
+          </div>
+          <div class="phone-mockup">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <img src="images/app-screen-control.svg" alt="DARI CONNECTER control screen" />
+              </div>
+            </div>
+            <p class="mockup-caption">Control</p>
+          </div>
         </div>
+        <div class="apps__info">
+          <h3>Automate your world from anywhere</h3>
+          <p>Configure, manage, and control lights, plugs, sensors, and more with a single, beautiful app. Built for smart homes, offices, and industrial projects.</p>
+          <ul class="apps__features">
+            <li>Real-time device control</li>
+            <li>Scenes & automation rules</li>
+            <li>Energy monitoring</li>
+            <li>Multi-user access</li>
+            <li>Secure OTA updates</li>
+          </ul>
+          <div class="apps__actions">
+            <a href="#" class="btn btn-primary">
+              <img src="images/google-play.svg" alt="Google Play" class="store-icon" />
+              Get it on Google Play
+            </a>
+            <a href="#" class="btn btn-ghost">
+              <img src="images/app-store.svg" alt="App Store" class="store-icon" />
+              Download on App Store
+            </a>
+          </div>
+          <div class="apps__meta">
+            <div class="meta-item">
+              <span class="meta-label">Version</span>
+              <span class="meta-value">1.1.1</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Updated</span>
+              <span class="meta-value">5 Jun 2025</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Android</span>
+              <span class="meta-value">10+</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Downloads</span>
+              <span class="meta-value">10+</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- App Showcase -->
-    <section id="app">
-        <div class="container">
-            <h2 class="section-title">Android <span class="gradient-text">App</span></h2>
-            
-            <div class="app-showcase">
-                <div class="app-content">
-                    <h3>DARI CONNECTER Mobile</h3>
-                    <p>Control your entire smart home from anywhere with our intuitive Android application. Monitor energy usage, control devices, create automation routines, and receive notifications.</p>
-                    
-                    <div class="app-info">
-                        <p><i class="fas fa-check-circle" style="color: var(--accent-sky); margin-right: 10px;"></i> Version 1.1.1</p>
-                        <p><i class="fas fa-check-circle" style="color: var(--accent-sky); margin-right: 10px;"></i> Android 10+</p>
-                        <p><i class="fas fa-check-circle" style="color: var(--accent-sky); margin-right: 10px;"></i> Updated 5 Jun 2025</p>
-                    </div>
-                    
-                    <div class="app-buttons">
-                        <a href="#" class="btn btn-primary">
-                            <i class="fas fa-download" style="margin-right: 10px;"></i> Download APK
-                        </a>
-                        <a href="#" class="btn btn-secondary">
-                            <i class="fas fa-play-circle" style="margin-right: 10px;"></i> Watch Demo Video
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="app-mockup">
-                    <div class="phone-mockup">
-                        <div class="phone-screen">
-                            <!-- App screen content would go here -->
-                            <div style="padding: 20px; color: white; text-align: center;">
-                                <div style="margin-top: 50px;">
-                                    <i class="fas fa-bolt" style="font-size: 3rem; margin-bottom: 20px;"></i>
-                                    <h3 style="font-family: 'Orbitron', sans-serif;">DARI CONNECTER</h3>
-                                </div>
-                                <div style="margin-top: 80px; text-align: left;">
-                                    <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 10px; margin-bottom: 10px;">
-                                        <i class="fas fa-lightbulb" style="margin-right: 10px;"></i> Living Room Lights
-                                    </div>
-                                    <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 10px; margin-bottom: 10px;">
-                                        <i class="fas fa-thermometer-half" style="margin-right: 10px;"></i> Thermostat: 22°C
-                                    </div>
-                                    <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 10px; margin-bottom: 10px;">
-                                        <i class="fas fa-lock" style="margin-right: 10px;"></i> Front Door: Locked
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <section id="contact" class="section footer-cta">
+    <div class="footer-card">
+      <div>
+        <p class="eyebrow">Let's build</p>
+        <h3>Ready for the next smart experience?</h3>
+        <p class="section__desc">Tell me about your smart home, industrial automation, or robotics vision.</p>
+      </div>
+      <form class="cta-form">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="you@example.com" required />
         </div>
-    </section>
-
-    <!-- System Architecture -->
-    <section id="architecture">
-        <div class="container">
-            <h2 class="section-title">System <span class="gradient-text">Architecture</span></h2>
-            
-            <div class="architecture">
-                <div class="arch-flow">
-                    <div class="arch-step">
-                        <div class="arch-icon">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <h4>User</h4>
-                        <p>Control via app or voice</p>
-                    </div>
-                    
-                    <div class="arch-step">
-                        <div class="arch-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h4>Mobile/Web App</h4>
-                        <p>DARI CONNECTER interface</p>
-                    </div>
-                    
-                    <div class="arch-step">
-                        <div class="arch-icon">
-                            <i class="fas fa-wifi"></i>
-                        </div>
-                        <h4>WiFi/Bluetooth</h4>
-                        <p>Local wireless communication</p>
-                    </div>
-                    
-                    <div class="arch-step">
-                        <div class="arch-icon">
-                            <i class="fas fa-microchip"></i>
-                        </div>
-                        <h4>ESP32/Arduino</h4>
-                        <p>Microcontroller hub</p>
-                    </div>
-                    
-                    <div class="arch-step">
-                        <div class="arch-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h4>Relays/Sensors/Motors</h4>
-                        <p>Physical device control</p>
-                    </div>
-                </div>
-                
-                <div class="arch-line"></div>
-            </div>
+        <div class="input-group">
+          <label for="message">Project brief</label>
+          <textarea id="message" name="message" rows="3" placeholder="Describe your idea"></textarea>
         </div>
-    </section>
-
-    <!-- Projects Gallery -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Our <span class="gradient-text">Projects</span></h2>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Smart Lighting System</h3>
-                        <p>Complete home lighting automation with color control, schedules, and energy monitoring.</p>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-plug"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Smart Power Outlets</h3>
-                        <p>WiFi-enabled outlets with remote control and consumption tracking for entire home.</p>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Control Dashboard</h3>
-                        <p>Custom web dashboard for monitoring and controlling all IoT devices in a commercial building.</p>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Home Assistant Robot</h3>
-                        <p>Voice-controlled robot for home monitoring, delivery of small items, and security patrols.</p>
-                    </div>
-                </div>
-            </div>
+        <button class="btn btn-primary" type="submit">Send</button>
+      </form>
+    </div>
+    <footer class="footer">
+      <div class="footer__brand">
+        <p class="nav__title">DARI CONNECTER</p>
+        <p class="nav__subtitle">Smart ecosystems, everywhere.</p>
+        <div class="footer__apps">
+          <a class="chip" href="#" aria-label="Google Play link">Google Play</a>
+          <a class="chip" href="#" aria-label="App Store link">App Store</a>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Start Your <span class="gradient-text">Smart Project</span> Today</h2>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <p>Ready to transform your home or business with smart technology? Contact us for a consultation.</p>
-                    
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>contact@dariconnecter.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <div>
-                            <h4>WhatsApp</h4>
-                            <p>+1 (555) 123-4567</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+1 (555) 987-6543</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Project Type">
-                        </div>
-                        
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Tell us about your project..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-logo">DARI CONNECTER</div>
-            <p class="slogan">Your Home. Your Control. Your Future.</p>
-            
-            <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#philosophy">Philosophy</a>
-                <a href="#services">Services</a>
-                <a href="#features">Features</a>
-                <a href="#app">App</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-            
-            <div class="social-icons" style="margin-top: 30px;">
-                <a href="#" style="color: var(--text-secondary); margin: 0 15px; font-size: 1.3rem;"><i class="fab fa-twitter"></i></a>
-                <a href="#" style="color: var(--text-secondary); margin: 0 15px; font-size: 1.3rem;"><i class="fab fa-linkedin"></i></a>
-                <a href="#" style="color: var(--text-secondary); margin: 0 15px; font-size: 1.3rem;"><i class="fab fa-github"></i></a>
-                <a href="#" style="color: var(--text-secondary); margin: 0 15px; font-size: 1.3rem;"><i class="fab fa-youtube"></i></a>
-            </div>
-            
-            <div class="copyright">
-                &copy; 2025 DARI CONNECTER. All rights reserved. | Smart Home & IoT Platform
-            </div>
-        </div>
+      </div>
+      <div class="footer__links">
+        <a href="mailto:hello@dariconnector.com">hello@dariconnector.com</a>
+        <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+      <div class="footer__copy">
+        <p>© <span id="year"></span> DARI CONNECTER. All rights reserved.</p>
+      </div>
     </footer>
+  </section>
 
-    <script>
-        // Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-        
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-            body.classList.toggle('dark-mode');
-            
-            // Update header background based on theme
-            const header = document.querySelector('header');
-            if (body.classList.contains('light-mode')) {
-                header.style.backgroundColor = 'rgba(248, 250, 252, 0.9)';
-            } else {
-                header.style.backgroundColor = 'rgba(10, 14, 23, 0.9)';
-            }
-            
-            // Save preference to localStorage
-            const isLightMode = body.classList.contains('light-mode');
-            localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
-        });
-        
-        // Check for saved theme preference
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            body.classList.remove('dark-mode');
-            body.classList.add('light-mode');
-            const header = document.querySelector('header');
-            header.style.backgroundColor = 'rgba(248, 250, 252, 0.9)';
-        }
-        
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
-        // Create animated background for hero section
-        const heroBg = document.getElementById('heroBg');
-        
-        // Create particles
-        for (let i = 0; i < 50; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            
-            // Random size and position
-            const size = Math.random() * 5 + 2;
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            particle.style.left = `${Math.random() * 100}%`;
-            particle.style.top = `${Math.random() * 100}%`;
-            
-            // Random animation delay
-            particle.style.animationDelay = `${Math.random() * 15}s`;
-            
-            // Random color
-            const colors = ['#3b82f6', '#0ea5e9', '#38bdf8'];
-            particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-            
-            heroBg.appendChild(particle);
-        }
-        
-        // Create grid lines
-        for (let i = 0; i < 10; i++) {
-            const line = document.createElement('div');
-            line.classList.add('grid-line');
-            line.style.top = `${i * 10}%`;
-            line.style.opacity = `${0.05 + Math.random() * 0.05}`;
-            heroBg.appendChild(line);
-        }
-        
-        // Add scroll animation to elements
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        // Observe elements for scroll animation
-        document.querySelectorAll('.philosophy-card, .service-card, .feature-card, .project-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(card);
-        });
-        
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your message! We will contact you soon.');
-            contactForm.reset();
-        });
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+  <div id="modalOverlay" class="modal hidden" aria-hidden="true" role="dialog" aria-label="Project details">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__content">
+      <button class="modal__close" data-close aria-label="Close modal">×</button>
+      <div class="modal__media">
+        <img id="modalImage" src="" alt="Project" />
+      </div>
+      <div class="modal__body">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDescription"></p>
+        <div class="modal__actions">
+          <button id="modalPrev" class="btn btn-ghost">Prev</button>
+          <button id="modalNext" class="btn btn-primary">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="serviceModal" class="modal hidden" aria-hidden="true" role="dialog" aria-label="Service details">
+    <div class="modal__backdrop" data-service-close></div>
+    <div class="modal__content">
+      <button class="modal__close" data-service-close aria-label="Close modal">×</button>
+      <div class="modal__media">
+        <img id="serviceModalImage" src="" alt="Service" />
+      </div>
+      <div class="modal__body">
+        <h3 id="serviceModalTitle"></h3>
+        <p id="serviceModalDescription"></p>
+        <div class="modal__actions">
+          <button id="serviceModalPrev" class="btn btn-ghost">Prev</button>
+          <button id="serviceModalNext" class="btn btn-primary">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/popups.js"></script>
+  <script src="js/projects.js"></script>
 </body>
-</html>
 </html>

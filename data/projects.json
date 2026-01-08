@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Smart Home Automation Hub",
+    "image": "Project/1.png",
+    "description": "Complete home management system controlling lights, heating, ventilation, and appliances. Features: Voice control with Alexa, Google Home, and Siri. Scheduled automation for devices. Smart notifications to your phone. Remote control via mobile app. Sensors Used: PIR Motion Sensor, Light Sensor (LDR), Temperature & Humidity Sensor (DHT22), Door/Window Magnetic Sensor. Skills: ESP32, MQTT, Wi-Fi control, Home Automation Integration, Voice Command Integration."
+  },
+  {
+    "id": 2,
+    "title": "Industrial Machine Monitoring System",
+    "image": "Project/2.png",
+    "description": "Remote monitoring and management of small industrial equipment to improve efficiency and safety. Features: Voice control with Alexa/Google Home to turn machines on/off or check status. Real-time fault alerts. Interactive dashboard for energy and performance monitoring. Sensors Used: Vibration Sensor, Temperature Sensor (DS18B20), Current Sensor (ACS712), Proximity Sensor. Skills: ESP32, Industrial Sensors, MQTT, Dashboard Visualization, Voice Control Integration."
+  },
+  {
+    "id": 3,
+    "title": "Smart Farm Irrigation & Soil Monitor",
+    "image": "Project/3.png",
+    "description": "Automated irrigation system for farms with soil and weather monitoring. Features: Voice-controlled water pumps via Alexa or Google Home. Alerts when soil moisture is low or issues occur. Cloud-based data logging and analytics. Sensors Used: Soil Moisture Sensor, Rain Sensor, Temperature & Humidity Sensor, Water Flow Sensor. Skills: ESP32/Arduino, MQTT, IoT Cloud Platform, Mobile Notifications, Voice Control."
+  },
+  {
+    "id": 4,
+    "title": "Robotic Arm Control Platform",
+    "image": "Project/4.png",
+    "description": "Smart robotic arm for remote control, educational purposes, or automation tasks. Features: Voice control for performing specific tasks via Alexa/Google Home. Manual control via mobile app. Programmable automatic sequences. Sensors Used: Potentiometer Sensors (joint angles), Ultrasonic Sensor, Force Sensor, Encoder Modules. Skills: ESP32/Arduino, Servo Motors, IoT Control, Robotics Programming, Voice Command Integration."
+  },
+  {
+    "id": 5,
+    "title": "Smart Home Automation & Security",
+    "image": "Project/5.png",
+    "description": "Fully integrated smart home system combining automation and security. Features: Voice control for lights, curtains, and smart locks via Alexa, Google Home, and Siri. Real-time alerts for motion or door/window activity. Smart cameras with live streaming to mobile devices. Sensors Used: PIR Motion Sensor, Magnetic Door/Window Sensor, Light Sensor, ESP32-CAM. Skills: ESP32, MQTT, Mobile App Integration, Automation Rules, Voice Control Integration."
+  },
+  {
+    "id": 6,
+    "title": "Smart Lighting & Energy Saver System",
+    "image": "Project/6.png",
+    "description": "Smart lighting system with energy monitoring and efficiency optimization. Features: Voice control to turn on/off lights or adjust brightness via Alexa, Google Home, and Siri. Automatic lighting based on motion and ambient light. Electricity usage notifications and remote app control. Sensors Used: PIR Motion Sensor, LDR Light Sensor, Current Sensor (ACS712), Temperature Sensor. Skills: ESP32, Smart Relays, MQTT, Mobile/Web Interface, Voice Command Integration."
+  }
+]
