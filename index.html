@@ -1,269 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DARI CONNECTER | Next-Gen Smart Tech</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/global.css" />
-  <link rel="stylesheet" href="css/hero.css" />
-  <link rel="stylesheet" href="css/services.css" />
-  <link rel="stylesheet" href="css/projects.css" />
-  <link rel="stylesheet" href="css/apps.css" />
-  <link rel="stylesheet" href="css/popups.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DARI CONNECTER · Smart Home Control Dashboard</title>
+    <meta name="description" content="DARI CONNECTER – Next-generation smart home and automation platform for IoT, robotics, and industrial control." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/problem-solution.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/how-it-works.css" />
+    <link rel="stylesheet" href="css/features.css" />
+    <link rel="stylesheet" href="css/services.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
+    <link rel="stylesheet" href="css/popup.css" />
+    <link rel="stylesheet" href="css/trust.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/footer.css" />
 </head>
 <body>
-  <div class="neon-grid"></div>
-  <header class="nav">
-    <div class="nav__logo">
-      <span class="logo-icon">⌁</span>
-      <div>
-        <p class="nav__title">DARI CONNECTER</p>
-        <p class="nav__subtitle">Smart Tech Platform</p>
-      </div>
+    <div class="page-shell">
+        <header class="top-bar" data-scroll>
+            <div class="logo">
+                <span class="logo__mark">DC</span>
+                <div>
+                    <p class="logo__label">DARI CONNECTER</p>
+                    <p class="logo__tag">Smart Home & Automation</p>
+                </div>
+            </div>
+            <nav class="top-bar__nav">
+                <a href="#hero">Home</a>
+                <a href="#how-it-works">How it works</a>
+                <a href="#features">Features</a>
+                <a href="#gallery">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="top-bar__burger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+        <main id="app" class="sections"></main>
     </div>
-    <nav class="nav__links">
-      <a href="#hero" class="nav__link active">Home</a>
-      <a href="#services" class="nav__link">Services</a>
-      <a href="#projects" class="nav__link">Projects</a>
-      <a href="#apps" class="nav__link">Apps</a>
-      <a href="#contact" class="nav__link">Contact</a>
-    </nav>
-    <div class="nav__actions">
-      <button id="themeToggle" aria-label="Toggle theme">☾</button>
-      <button id="menuToggle" class="nav__burger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
+
+    <div class="contact__floating">
+        <a class="floating-btn floating-btn--call" href="tel:+212600000000">
+            <span class="floating-btn__icon"><i class="fa-solid fa-phone"></i></span>
+        </a>
+        <a class="floating-btn floating-btn--whatsapp" href="https://wa.me/212600000000" target="_blank" rel="noopener">
+            <span class="floating-btn__icon"><i class="fa-brands fa-whatsapp"></i></span>
+        </a>
+        <a class="floating-btn floating-btn--email" href="mailto:hello@dari-connecter.com">
+            <span class="floating-btn__icon"><i class="fa-regular fa-envelope"></i></span>
+        </a>
     </div>
-  </header>
 
-  <main>
-    <section id="hero" class="hero">
-      <div class="hero__content">
-        <p class="eyebrow">Smart Home · IoT · Robotics · Automation</p>
-        <h1 class="hero__title">
-          Building the next-generation <span>connected</span> experiences.
-        </h1>
-        <p class="hero__subtitle">
-          From homes to industries, I design intelligent systems that sense, decide, and act. Explore my smart platforms, robotics solutions, and IoT services.
-        </p>
-        <div class="hero__actions">
-          <button class="btn btn-primary" data-scroll="#services">Explore Services</button>
-          <button class="btn btn-ghost" data-scroll="#projects">View Projects</button>
-        </div>
-        <div class="hero__apps">
-          <span>Apps:</span>
-          <div class="chip">DARI CONNECTER</div>
-          <div class="chip">FiveStarApp</div>
-        </div>
-      </div>
-      <div class="hero__visual">
-        <div class="orbital">
-          <div class="orbital__core">
-            <div class="core-glow"></div>
-            <div class="core-dot"></div>
-          </div>
-          <div class="orbital__ring ring-1"></div>
-          <div class="orbital__ring ring-2"></div>
-          <div class="orbital__ring ring-3"></div>
-        </div>
-        <div class="floating-icons">
-          <div class="floating-icon" data-speed="2">
-            <img src="images/iot.svg" alt="IoT" />
-            <span>IoT Mesh</span>
-          </div>
-          <div class="floating-icon" data-speed="1.2">
-            <img src="images/home.svg" alt="Smart Home" />
-            <span>Smart Home</span>
-          </div>
-          <div class="floating-icon" data-speed="1.6">
-            <img src="images/robot.svg" alt="Robotics" />
-            <span>Robotics</span>
-          </div>
-          <div class="floating-icon" data-speed="1.1">
-            <img src="images/industry.svg" alt="Automation" />
-            <span>Automation</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="section services">
-      <div class="section__header">
-        <p class="eyebrow">Capabilities</p>
-        <h2>Services engineered for intelligent environments</h2>
-        <p class="section__desc">Each solution is crafted with secure connectivity, automation, and delightful user experience.</p>
-      </div>
-      <div id="servicesGrid" class="services__grid" aria-live="polite"></div>
-    </section>
-
-    <section id="projects" class="section projects">
-      <div class="section__header">
-        <p class="eyebrow">Showcase</p>
-        <h2>Project gallery</h2>
-        <p class="section__desc">IoT deployments, robotics builds, and automation platforms brought to life.</p>
-      </div>
-      <div id="projectsGrid" class="projects__grid" aria-live="polite"></div>
-    </section>
-
-    <section id="apps" class="section apps">
-      <div class="section__header">
-        <p class="eyebrow">Mobile Apps</p>
-        <h2>DARI CONNECTER</h2>
-        <p class="section__desc">Your smart home and IoT control center—free, intuitive, and powerful.</p>
-      </div>
-      <div class="apps__showcase">
-        <div class="apps__mockups">
-          <div class="phone-mockup">
-            <div class="phone-frame">
-              <div class="phone-screen">
-                <img src="images/app-screen-home.svg" alt="DARI CONNECTER home screen" />
-              </div>
-            </div>
-            <p class="mockup-caption">Dashboard</p>
-          </div>
-          <div class="phone-mockup">
-            <div class="phone-frame">
-              <div class="phone-screen">
-                <img src="images/app-screen-devices.svg" alt="DARI CONNECTER devices screen" />
-              </div>
-            </div>
-            <p class="mockup-caption">Devices</p>
-          </div>
-          <div class="phone-mockup">
-            <div class="phone-frame">
-              <div class="phone-screen">
-                <img src="images/app-screen-control.svg" alt="DARI CONNECTER control screen" />
-              </div>
-            </div>
-            <p class="mockup-caption">Control</p>
-          </div>
-        </div>
-        <div class="apps__info">
-          <h3>Automate your world from anywhere</h3>
-          <p>Configure, manage, and control lights, plugs, sensors, and more with a single, beautiful app. Built for smart homes, offices, and industrial projects.</p>
-          <ul class="apps__features">
-            <li>Real-time device control</li>
-            <li>Scenes & automation rules</li>
-            <li>Energy monitoring</li>
-            <li>Multi-user access</li>
-            <li>Secure OTA updates</li>
-          </ul>
-          <div class="apps__actions">
-            <a href="#" class="btn btn-primary">
-              <img src="images/google-play.svg" alt="Google Play" class="store-icon" />
-              Get it on Google Play
-            </a>
-            <a href="#" class="btn btn-ghost">
-              <img src="images/app-store.svg" alt="App Store" class="store-icon" />
-              Download on App Store
-            </a>
-          </div>
-          <div class="apps__meta">
-            <div class="meta-item">
-              <span class="meta-label">Version</span>
-              <span class="meta-value">1.1.1</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Updated</span>
-              <span class="meta-value">5 Jun 2025</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Android</span>
-              <span class="meta-value">10+</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Downloads</span>
-              <span class="meta-value">10+</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <section id="contact" class="section footer-cta">
-    <div class="footer-card">
-      <div>
-        <p class="eyebrow">Let's build</p>
-        <h3>Ready for the next smart experience?</h3>
-        <p class="section__desc">Tell me about your smart home, industrial automation, or robotics vision.</p>
-      </div>
-      <form class="cta-form">
-        <div class="input-group">
-          <label for="email">Email</label>
-          <input id="email" type="email" name="email" placeholder="you@example.com" required />
-        </div>
-        <div class="input-group">
-          <label for="message">Project brief</label>
-          <textarea id="message" name="message" rows="3" placeholder="Describe your idea"></textarea>
-        </div>
-        <button class="btn btn-primary" type="submit">Send</button>
-      </form>
-    </div>
-    <footer class="footer">
-      <div class="footer__brand">
-        <p class="nav__title">DARI CONNECTER</p>
-        <p class="nav__subtitle">Smart ecosystems, everywhere.</p>
-        <div class="footer__apps">
-          <a class="chip" href="#" aria-label="Google Play link">Google Play</a>
-          <a class="chip" href="#" aria-label="App Store link">App Store</a>
-        </div>
-      </div>
-      <div class="footer__links">
-        <a href="mailto:hello@dariconnector.com">hello@dariconnector.com</a>
-        <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
-      </div>
-      <div class="footer__copy">
-        <p>© <span id="year"></span> DARI CONNECTER. All rights reserved.</p>
-      </div>
-    </footer>
-  </section>
-
-  <div id="modalOverlay" class="modal hidden" aria-hidden="true" role="dialog" aria-label="Project details">
-    <div class="modal__backdrop" data-close></div>
-    <div class="modal__content">
-      <button class="modal__close" data-close aria-label="Close modal">×</button>
-      <div class="modal__media">
-        <img id="modalImage" src="" alt="Project" />
-      </div>
-      <div class="modal__body">
-        <h3 id="modalTitle"></h3>
-        <p id="modalDescription"></p>
-        <div class="modal__actions">
-          <button id="modalPrev" class="btn btn-ghost">Prev</button>
-          <button id="modalNext" class="btn btn-primary">Next</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="serviceModal" class="modal hidden" aria-hidden="true" role="dialog" aria-label="Service details">
-    <div class="modal__backdrop" data-service-close></div>
-    <div class="modal__content">
-      <button class="modal__close" data-service-close aria-label="Close modal">×</button>
-      <div class="modal__media">
-        <img id="serviceModalImage" src="" alt="Service" />
-      </div>
-      <div class="modal__body">
-        <h3 id="serviceModalTitle"></h3>
-        <p id="serviceModalDescription"></p>
-        <div class="modal__actions">
-          <button id="serviceModalPrev" class="btn btn-ghost">Prev</button>
-          <button id="serviceModalNext" class="btn btn-primary">Next</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="js/main.js"></script>
-  <script src="js/hero.js"></script>
-  <script src="js/services.js"></script>
-  <script src="js/popups.js"></script>
-  <script src="js/projects.js"></script>
+    <script type="module" src="js/main.js" defer></script>
+    <script type="module" src="js/hero.js" defer></script>
+    <script type="module" src="js/problem-solution.js" defer></script>
+    <script type="module" src="js/about.js" defer></script>
+    <script type="module" src="js/how-it-works.js" defer></script>
+    <script type="module" src="js/features.js" defer></script>
+    <script type="module" src="js/services.js" defer></script>
+    <script type="module" src="js/gallery.js" defer></script>
+    <script type="module" src="js/popup.js" defer></script>
+    <script type="module" src="js/trust.js" defer></script>
+    <script type="module" src="js/contact.js" defer></script>
+    <script type="module" src="js/scroll-effects.js" defer></script>
 </body>
 </html>

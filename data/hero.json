@@ -1,0 +1,29 @@
+{
+    "eyebrow": "Smart Home",
+    "title": "DARI CONNECTER – Smart Home Control in Your Pocket",
+    "subtitle": "Control lights, power outlets, sensors, and automation rituals from one intelligent mobile app built for Arduino, ESP32, ESP8266, and industrial IoT.",
+    "primaryCta": {
+        "label": "Download on Google Play",
+        "href": "#"
+    },
+    "secondaryCtas": [
+        { "label": "View Projects", "href": "#gallery" },
+        { "label": "Contact Us", "href": "#contact" }
+    ],
+    "metrics": [
+        { "label": "Connected Devices", "value": "+450" },
+        { "label": "Automation Routines", "value": "320" },
+        { "label": "Industrial Sites", "value": "27" }
+    ],
+    "deviceStatus": [
+        { "name": "Ambient Lighting", "status": "on", "value": "72%" },
+        { "name": "Security Hub", "status": "on", "value": "Armed" },
+        { "name": "Power Outlets", "status": "off", "value": "3 standby" }
+    ],
+    "badges": [
+        "ESP32 · ESP8266",
+        "Arduino Mega",
+        "Android · PWA",
+        "Google Home · Alexa"
+    ]
+}

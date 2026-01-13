@@ -1,0 +1,22 @@
+{
+    "eyebrow": "From Chaos to Control",
+    "title": "Traditional homes can’t keep up with connected living",
+    "subtitle": "Manual switches, energy waste, zero visibility, and unsecure devices make it hard to manage comfort and efficiency at scale.",
+    "problemTitle": "❌ The Problem",
+    "problems": [
+        "No unified view of lighting, climate, and power",
+        "Manual controls in different rooms",
+        "Energy spikes with zero analytics",
+        "No integrations with voice assistants",
+        "Complex wiring for every new device"
+    ],
+    "solutionTitle": "✅ The Solution – DARI CONNECTER",
+    "solutions": [
+        "Single mobile dashboard for every device",
+        "Schedules, scenes, and automation rituals",
+        "Live telemetry + proactive energy alerts",
+        "Compatible with Google Home, Alexa, Home Assistant",
+        "Designed for Arduino, ESP32, ESP8266 ecosystems"
+    ],
+    "cta": "Upgrade to Smart Home"
+}

@@ -1,0 +1,24 @@
+{
+    "eyebrow": "How it works",
+    "title": "Plug, orchestrate, and automate in minutes",
+    "subtitle": "Your smart home stack becomes operational with a guided onboarding and remote diagnostics built for technicians.",
+    "cta": "Start Smart Automation",
+    "steps": [
+        {
+            "label": "1 · Install Hardware",
+            "description": "Pair Arduino / ESP boards, DIN-rail relays, and sensors (motion, temperature, humidity, gas) across rooms. 🔌 Ensure proper electrical wiring, fuses, and circuit protection for safety."
+        },
+        {
+            "label": "2 · Install App",
+            "description": "Download and install the smart home app on Android or iOS. 📱 The app will allow you to control devices, view real-time sensor data, and configure schedules."
+        },
+        {
+            "label": "3 · Connect Devices",
+            "description": "Link devices via Wi-Fi, Bluetooth, or 4G, and integrate industrial controllers over encrypted channels. ⚡ Use shielded cables for nearby high-current devices to prevent interference."
+        },
+        {
+            "label": "4 · Automate & Control",
+            "description": "Create routines, schedules, and automations directly from the app. 🛠️ Monitor device status, receive alerts for overload, temperature spikes, or gas leaks, and control all connected devices remotely."
+        }
+    ]
+}

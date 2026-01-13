@@ -1,50 +1,37 @@
-[
-  {
-    "id": 1,
-    "title": "Connected Home Solutions",
-    "icon": "home-connected.svg",
-    "image": "Services/1.png",
-    "description": "Manage lights, plugs, sensors, security, and comfort from a single smart hub.",
-    "longDescription": "Connected Home Solutions — Full control over home devices including lights, plugs, sensors, security systems, and comfort settings, all from one central smart hub with voice and app integration."
-  },
-  {
-    "id": 2,
-    "title": "Robot Control via Smartphone",
-    "icon": "robot-home.svg",
-    "image": "Services/2.png",
-    "description": "Control a robot remotely using your smartphone via Bluetooth and ESP32.",
-    "longDescription": "Smart Robot Control via Smartphone — Operate a small robot (rover or robotic arm) using ESP32 and Bluetooth communication. Features include smartphone app control, movement commands (forward, backward, left, right, stop), obstacle detection, and programmable automation routines. Sensors used: Ultrasonic Sensor, IR Sensors, Motor Encoders. Skills: ESP32, Bluetooth (BLE), Mobile App Integration, Robotics Programming, Smart Home Automation."
-  },
-  {
-    "id": 3,
-    "title": "Precision Agriculture IoT",
-    "icon": "agri.svg",
-    "image": "Services/3.png",
-    "description": "Automated monitoring and control of soil, climate, and irrigation systems.",
-    "longDescription": "Precision Agriculture IoT — Smart farming solutions that automate watering, nutrient delivery, and climate monitoring with dashboards for real-time insights and data logging."
-  },
-  {
-    "id": 4,
-    "title": "Industrial Automation & Monitoring",
-    "icon": "industry.svg",
-    "image": "Services/4.png",
-    "description": "Monitor and control industrial systems with predictive maintenance and smart dashboards.",
-    "longDescription": "Industrial Automation & Monitoring — Real-time monitoring, predictive maintenance, and secure control of industrial machines and processes with visualization dashboards and alerts."
-  },
-  {
-    "id": 5,
-    "title": "Smart Home Automation & Security",
-    "icon": "security.svg",
-    "image": "Services/5.png",
-    "description": "Integrated smart home system combining automation and security for full control.",
-    "longDescription": "Smart Home Automation & Security — Fully integrated smart home solution combining automated control of lights, appliances, and curtains with real-time security monitoring. Features include smart locks, motion sensors, PIR detection, and live camera streaming to mobile devices. Sensors used: PIR Motion Sensor, Magnetic Door/Window Sensor, ESP32-CAM, Light Sensors. Skills: ESP32, MQTT, Mobile App Integration, Automation Rules, Voice Command Integration."
-  },
-  {
-    "id": 6,
-    "title": "Smart Energy & Automation Insights",
-    "icon": "ai.svg",
-    "image": "Services/6.png",
-    "description": "Optimize energy usage, automate processes, and gain actionable insights.",
-    "longDescription": "Smart Energy & Automation Insights — Monitor energy consumption, detect anomalies, automate workflows, and get real-time insights to optimize efficiency across smart homes, industries, and agriculture."
-  }
-]
+{
+    "eyebrow": "Automation Services",
+    "title": "From apartments to factories, we deploy intelligent control",
+    "subtitle": "Engineering services blending smart home design, industrial maintenance, and robotics integration.",
+    "items": [
+        {
+            "label": "Smart Home Installation",
+            "description": "Design, wiring, commissioning, and training for residential automation.",
+            "icon": "🏠"
+        },
+        {
+            "label": "Industrial Electrical Maintenance",
+            "description": "Predictive maintenance, PLC retrofits, and secure remote monitoring.",
+            "icon": "🏗️"
+        },
+        {
+            "label": "Automation Systems",
+            "description": "Custom SCADA dashboards, edge controllers, and IoT gateways.",
+            "icon": "⚙️"
+        },
+        {
+            "label": "Arduino / ESP Projects",
+            "description": "Rapid prototyping for sensors, actuators, and wearable devices.",
+            "icon": "🧩"
+        },
+        {
+            "label": "Robotics Solutions",
+            "description": "Pick-and-place robotics, AGVs, and collaborative arms for SMEs.",
+            "icon": "🤖"
+        },
+        {
+            "label": "Custom Android Apps",
+            "description": "Android + WebView apps for remote control, alerts, and dashboards.",
+            "icon": "📲"
+        }
+    ]
+}

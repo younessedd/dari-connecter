@@ -1,64 +1,114 @@
-// Main interactions: nav, smooth scroll, section highlights, theme toggle
-(function () {
-  const navLinks = document.querySelectorAll(".nav__link");
-  const sections = [...document.querySelectorAll("section[id]")];
-  const burger = document.getElementById("menuToggle");
-  const navList = document.querySelector(".nav__links");
-  const themeToggle = document.getElementById("themeToggle");
-  const yearEl = document.getElementById("year");
+const sections = [
+    { id: "hero", path: "sections/hero.html" },
+    { id: "problem-solution", path: "sections/problem-solution.html" },
+    { id: "about", path: "sections/about.html" },
+    { id: "how-it-works", path: "sections/how-it-works.html" },
+    { id: "features", path: "sections/features.html" },
+    { id: "services", path: "sections/services.html" },
+    { id: "gallery", path: "sections/gallery.html" },
+    { id: "trust", path: "sections/trust.html" },
+    { id: "contact", path: "sections/contact.html" },
+    { id: "footer", path: "sections/footer.html" }
+];
 
-  function smoothScroll(target) {
-    const el = document.querySelector(target);
-    if (!el) return;
-    const y = el.getBoundingClientRect().top + window.scrollY - 70;
-    window.scrollTo({ top: y, behavior: "smooth" });
-  }
+const readySections = new Set();
+const sectionListeners = {};
 
-  document.querySelectorAll("[data-scroll]").forEach((btn) => {
-    btn.addEventListener("click", () => smoothScroll(btn.dataset.scroll));
-  });
+const DariConnecter = window.DariConnecter || {};
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      smoothScroll(link.getAttribute("href"));
-      navList?.classList.remove("open");
+DariConnecter.fetchJSON = async (path) => {
+    const response = await fetch(path);
+    if (!response.ok) {
+        throw new Error(`Failed to load ${path}`);
+    }
+    return response.json();
+};
+
+DariConnecter.hydrateList = (root, items, renderer) => {
+    if (!root || !Array.isArray(items)) return;
+    root.innerHTML = "";
+    items.forEach((item) => {
+        const fragment = renderer(item);
+        if (fragment) root.appendChild(fragment);
     });
-  });
+};
 
-  if (burger) {
-    burger.addEventListener("click", () => navList?.classList.toggle("open"));
-  }
+DariConnecter.whenSectionReady = (id, callback) => {
+    if (readySections.has(id)) {
+        callback();
+        return;
+    }
+    if (!sectionListeners[id]) {
+        sectionListeners[id] = [];
+    }
+    sectionListeners[id].push(callback);
+};
 
-  // Highlight current section
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navLinks.forEach((l) => l.classList.remove("active"));
-          const active = document.querySelector(`.nav__link[href="#${entry.target.id}"]`);
-          active?.classList.add("active");
-        }
-      });
-    },
-    { threshold: 0.35 }
-  );
-  sections.forEach((sec) => observer.observe(sec));
+DariConnecter.markSectionReady = (id) => {
+    readySections.add(id);
+    (sectionListeners[id] || []).forEach((callback) => callback());
+    sectionListeners[id] = [];
+};
 
-  // Theme toggle (simple dark/light swap via data attribute)
-  const root = document.documentElement;
-  const storedTheme = localStorage.getItem("theme");
-  if (storedTheme === "light") {
-    root.dataset.theme = "light";
-    themeToggle.textContent = "☀";
-  }
-  themeToggle?.addEventListener("click", () => {
-    const next = root.dataset.theme === "light" ? "dark" : "light";
-    root.dataset.theme = next === "dark" ? "" : "light";
-    localStorage.setItem("theme", next);
-    themeToggle.textContent = next === "light" ? "☀" : "☾";
-  });
+DariConnecter.selectSection = (id) =>
+    document.querySelector(`[data-section="${id}"]`);
 
-  // Set year
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-})();
+DariConnecter.setText = (root, selector, text) => {
+    if (!root) return;
+    const node = root.querySelector(selector);
+    if (node && typeof text !== "undefined") {
+        node.textContent = text;
+    }
+};
+
+DariConnecter.createBadge = (label) => {
+    const span = document.createElement("span");
+    span.className = "hero-badge";
+    span.textContent = label;
+    return span;
+};
+
+window.DariConnecter = DariConnecter;
+
+const loadSection = async ({ id, path }) => {
+    const response = await fetch(path);
+    if (!response.ok) {
+        throw new Error(`Unable to load section ${id}`);
+    }
+    const html = await response.text();
+    const template = document.createElement("template");
+    template.innerHTML = html.trim();
+    const section = template.content.firstElementChild;
+    document.getElementById("app").appendChild(section);
+    DariConnecter.markSectionReady(id);
+};
+
+const initPage = async () => {
+    for (const section of sections) {
+        await loadSection(section);
+    }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    initPage();
+
+    const nav = document.querySelector(".top-bar__nav");
+    const burger = document.querySelector(".top-bar__burger");
+    if (nav && burger) {
+        const toggleMenu = () => {
+            const isOpen = burger.getAttribute("aria-expanded") === "true";
+            burger.setAttribute("aria-expanded", (!isOpen).toString());
+            burger.classList.toggle("is-open", !isOpen);
+            nav.classList.toggle("is-open", !isOpen);
+        };
+
+        burger.addEventListener("click", toggleMenu);
+        nav.querySelectorAll("a").forEach((link) =>
+            link.addEventListener("click", () => {
+                burger.setAttribute("aria-expanded", "false");
+                burger.classList.remove("is-open");
+                nav.classList.remove("is-open");
+            })
+        );
+    }
+});

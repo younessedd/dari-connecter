@@ -1,0 +1,13 @@
+{
+    "links": [
+        { "label": "How it works", "href": "#how-it-works" },
+        { "label": "Services", "href": "#services" },
+        { "label": "Projects", "href": "#gallery" },
+        { "label": "Contact", "href": "#contact" },
+        { "label": "AUIA", "href": "https://auia.com" }
+    ],
+    "social": [
+        { "label": "Instagram", "href": "https://instagram.com/dari-connecter" }
+    ],
+    "year": 2026
+}

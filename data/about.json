@@ -1,0 +1,27 @@
+{
+    "eyebrow": "About DARI CONNECTER",
+    "title": "Smart Home + Industrial Automation in one stack",
+    "subtitle": "Built for homeowners, makers, and facility managers who need secure IoT orchestration across Bluetooth, Wi-Fi, and wired networks.",
+    "panels": [
+        {
+            "title": "Multi-Protocol",
+            "description": "Supports Arduino, ESP32, ESP8266, BLE, Wi-Fi, MQTT, and Modbus.",
+            "icon": "⚡"
+        },
+        {
+            "title": "Integrations",
+            "description": "Works with Google Home, Alexa, Home Assistant, and custom dashboards.",
+            "icon": "🌐"
+        },
+        {
+            "title": "App Version",
+            "description": "Version 1.1.1 · Updated 05 Jun 2025 with new energy insights.",
+            "icon": "📱"
+        },
+        {
+            "title": "Robotics & Industrial",
+            "description": "Deploy collaborative robotics, conveyor controls, and telemetry hubs.",
+            "icon": "🤖"
+        }
+    ]
+}

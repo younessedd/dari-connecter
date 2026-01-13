@@ -1,0 +1,32 @@
+{
+    "eyebrow": "Trusted by Makers & Facilities",
+    "title": "Why choose DARI CONNECTER",
+    "subtitle": "From premium villas to industrial plants, we build resilient automation ecosystems.",
+    "reasons": [
+        {
+            "title": "Real Deployments",
+            "description": "Documented projects across smart homes, factories, and retail spaces.",
+            "icon": "🏢"
+        },
+        {
+            "title": "Engineering DNA",
+            "description": "Electrical, software, and robotics specialists under one lab.",
+            "icon": "🧠"
+        },
+        {
+            "title": "Custom Playbooks",
+            "description": "Tailored automation templates based on goals, budget, and infrastructure.",
+            "icon": "📐"
+        },
+        {
+            "title": "After-Sales Support",
+            "description": "24/7 monitoring, firmware updates, and WhatsApp-first support.",
+            "icon": "💬"
+        },
+        {
+            "title": "Competitive Pricing",
+            "description": "Local manufacturing partners ensure lower BOM and faster delivery.",
+            "icon": "💰"
+        }
+    ]
+}

@@ -1,0 +1,101 @@
+.footer {
+    text-align: center;
+    background: radial-gradient(circle at 20% -30%, rgba(58, 217, 255, 0.12), transparent 45%),
+        radial-gradient(circle at 80% -20%, rgba(255, 140, 67, 0.12), transparent 45%),
+        rgba(5, 6, 12, 0.94);
+    padding: 36px 20px 28px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.footer__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    max-width: var(--grid-max);
+    margin: 0 auto 10px;
+}
+
+.footer__info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    text-align: center;
+}
+
+.footer__label {
+    color: var(--muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.footer__links-block,
+.footer__social-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer__brand {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.footer__version,
+.footer__provider {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.footer__links,
+.footer__social {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer__links a,
+.footer__social a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.footer__links a:hover,
+.footer__social a:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.footer__copyright {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+@media (min-width: 768px) {
+    .footer__grid {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 24px;
+        text-align: left;
+    }
+
+    .footer__info,
+    .footer__links-block,
+    .footer__social-block {
+        align-items: flex-start;
+    }
+}

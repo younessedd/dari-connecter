@@ -1,0 +1,43 @@
+{
+    "eyebrow": "Power Features",
+    "title": "A control center for every device type",
+    "subtitle": "DARI CONNECTER unifies smart lighting, security, robotics, and energy analytics inside a singular UI.",
+    "items": [
+        {
+            "label": "Lighting Control",
+            "tag": "RGB + Dimmable",
+            "description": "Fade scenes, circadian lighting, and presets that sync with daylight data.",
+            "icon": "💡"
+        },
+        {
+            "label": "Power Outlets",
+            "tag": "240V · 16A",
+            "description": "Switch loads, monitor energy, and cut phantom consumption remotely.",
+            "icon": "🔌"
+        },
+        {
+            "label": "Bluetooth / Wi-Fi",
+            "tag": "BLE · Wi-Fi 6",
+            "description": "Seamless pairing for ESP32, ESP8266, and BLE sensors with low latency.",
+            "icon": "📶"
+        },
+        {
+            "label": "Automation Scenarios",
+            "tag": "No-Code",
+            "description": "Build triggers based on schedules, location, sensors, or industrial signals.",
+            "icon": "🧠"
+        },
+        {
+            "label": "Remote Access",
+            "tag": "Cloud Tunnel",
+            "description": "Encrypted control and diagnostics from Android, PWA, or WebView.",
+            "icon": "☁️"
+        },
+        {
+            "label": "Secure Performance",
+            "tag": "AES256",
+            "description": "Hardware-level encryption, OTA firmware, and incident alerts.",
+            "icon": "🛡️"
+        }
+    ]
+}

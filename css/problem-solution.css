@@ -1,0 +1,51 @@
+.problem__grid {
+    display: grid;
+    gap: 20px;
+}
+
+.problem-card {
+    padding: 28px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(7, 9, 16, 0.8);
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.04);
+}
+
+.problem-card--issue {
+    border-top: 2px solid var(--danger);
+}
+
+.problem-card--solution {
+    border-top: 2px solid var(--accent-2);
+}
+
+.problem-card__list {
+    list-style: none;
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--muted);
+}
+
+.problem-card__list li {
+    position: relative;
+    padding-left: 20px;
+}
+
+.problem-card__list li::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+@media (min-width: 768px) {
+    .problem__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

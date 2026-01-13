@@ -1,0 +1,22 @@
+{
+    "eyebrow": "Contact",
+    "title": "Launch your smart automation program",
+    "subtitle": "Tell us about your property, factory, or robotics project and we’ll craft a turnkey blueprint in under 48h.",
+    "channels": [
+        {
+            "label": "WhatsApp Support",
+            "value": "+212 6 00 00 00 00",
+            "href": "https://wa.me/212600000000"
+        },
+        {
+            "label": "Email",
+            "value": "hello@dari-connecter.com",
+            "href": "mailto:hello@dari-connecter.com"
+        },
+        {
+            "label": "Operations HQ",
+            "value": "Casablanca · Morocco",
+            "href": "https://maps.google.com/?q=Casablanca"
+        }
+    ]
+}

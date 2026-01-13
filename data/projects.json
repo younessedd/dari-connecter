@@ -1,38 +1,196 @@
-[
-  {
-    "id": 1,
-    "title": "Smart Home Automation Hub",
-    "image": "Project/1.png",
-    "description": "Complete home management system controlling lights, heating, ventilation, and appliances. Features: Voice control with Alexa, Google Home, and Siri. Scheduled automation for devices. Smart notifications to your phone. Remote control via mobile app. Sensors Used: PIR Motion Sensor, Light Sensor (LDR), Temperature & Humidity Sensor (DHT22), Door/Window Magnetic Sensor. Skills: ESP32, MQTT, Wi-Fi control, Home Automation Integration, Voice Command Integration."
-  },
-  {
-    "id": 2,
-    "title": "Industrial Machine Monitoring System",
-    "image": "Project/2.png",
-    "description": "Remote monitoring and management of small industrial equipment to improve efficiency and safety. Features: Voice control with Alexa/Google Home to turn machines on/off or check status. Real-time fault alerts. Interactive dashboard for energy and performance monitoring. Sensors Used: Vibration Sensor, Temperature Sensor (DS18B20), Current Sensor (ACS712), Proximity Sensor. Skills: ESP32, Industrial Sensors, MQTT, Dashboard Visualization, Voice Control Integration."
-  },
-  {
-    "id": 3,
-    "title": "Smart Farm Irrigation & Soil Monitor",
-    "image": "Project/3.png",
-    "description": "Automated irrigation system for farms with soil and weather monitoring. Features: Voice-controlled water pumps via Alexa or Google Home. Alerts when soil moisture is low or issues occur. Cloud-based data logging and analytics. Sensors Used: Soil Moisture Sensor, Rain Sensor, Temperature & Humidity Sensor, Water Flow Sensor. Skills: ESP32/Arduino, MQTT, IoT Cloud Platform, Mobile Notifications, Voice Control."
-  },
-  {
-    "id": 4,
-    "title": "Robotic Arm Control Platform",
-    "image": "Project/4.png",
-    "description": "Smart robotic arm for remote control, educational purposes, or automation tasks. Features: Voice control for performing specific tasks via Alexa/Google Home. Manual control via mobile app. Programmable automatic sequences. Sensors Used: Potentiometer Sensors (joint angles), Ultrasonic Sensor, Force Sensor, Encoder Modules. Skills: ESP32/Arduino, Servo Motors, IoT Control, Robotics Programming, Voice Command Integration."
-  },
-  {
-    "id": 5,
-    "title": "Smart Home Automation & Security",
-    "image": "Project/5.png",
-    "description": "Fully integrated smart home system combining automation and security. Features: Voice control for lights, curtains, and smart locks via Alexa, Google Home, and Siri. Real-time alerts for motion or door/window activity. Smart cameras with live streaming to mobile devices. Sensors Used: PIR Motion Sensor, Magnetic Door/Window Sensor, Light Sensor, ESP32-CAM. Skills: ESP32, MQTT, Mobile App Integration, Automation Rules, Voice Control Integration."
-  },
-  {
-    "id": 6,
-    "title": "Smart Lighting & Energy Saver System",
-    "image": "Project/6.png",
-    "description": "Smart lighting system with energy monitoring and efficiency optimization. Features: Voice control to turn on/off lights or adjust brightness via Alexa, Google Home, and Siri. Automatic lighting based on motion and ambient light. Electricity usage notifications and remote app control. Sensors Used: PIR Motion Sensor, LDR Light Sensor, Current Sensor (ACS712), Temperature Sensor. Skills: ESP32, Smart Relays, MQTT, Mobile/Web Interface, Voice Command Integration."
-  }
-]
+{
+    "eyebrow": "Projects",
+    "title": "Deployments spanning smart home, automation, and robotics",
+    "subtitle": "Every build is modular, OTA-ready, and maintained through DARI CONNECTER cloud.",
+    "filters": [
+        { "label": "All", "value": "all" },
+        { "label": "Smart Home", "value": "smart-home" },
+        { "label": "Arduino", "value": "arduino" },
+        { "label": "ESP32", "value": "esp32" },
+        { "label": "ESP8266", "value": "esp8266" },
+        { "label": "Automation", "value": "automation" },
+        { "label": "Robotics", "value": "robotics" }
+    ],
+    "projects": [
+        {
+            "id": "smart-penthouse",
+            "title": "Penthouse Lighting Mesh",
+            "category": "smart-home",
+            "shortDescription": "Ambient lighting scenes, voice control, and presence-driven automation",
+            "longDescription": "We mapped 38 lighting circuits, integrated KNX dimmers with ESP32 gateways, and synced the entire home with voice scenes on Google Home & Alexa.",
+            "technologies": ["ESP32", "KNX", "Google Home", "OTA"],
+            "image": "images/projects/10.jpeg"
+        },
+        {
+            "id": "arduino-greenhouse",
+            "title": "Agro Greenhouse",
+            "category": "arduino",
+            "shortDescription": "IoT irrigation, ventilation, and climate analytics",
+            "longDescription": "Arduino Mega boards supervise irrigation valves, fans, and UV grow lights while DARI CONNECTER supplies dashboards and alerts via Android.",
+            "technologies": ["Arduino Mega", "LoRa", "Node-RED"],
+            "image": "images/projects/11.jpeg"
+        },
+        {
+            "id": "esp32-energy",
+            "title": "Industrial Energy Twin",
+            "category": "esp32",
+            "shortDescription": "Energy meters, harmonic analysis, and demand response",
+            "longDescription": "ESP32 gateways stream Modbus telemetry to our cloud, delivering predictive load shedding and SMS alerts for a 2MW facility.",
+            "technologies": ["ESP32", "Modbus", "MQTT", "PWA"],
+            "image": "images/projects/6.jpeg"
+        },
+        {
+            "id": "esp8266-villa",
+            "title": "Coastal Villa Retrofits",
+            "category": "esp8266",
+            "shortDescription": "Retrofit power outlets and HVAC control",
+            "longDescription": "ESP8266 relays upgraded legacy switches, enabling geo-fenced cooling, plug load management, and OTA updates with zero downtime.",
+            "technologies": ["ESP8266", "OTA", "IFTTT"],
+            "image": "images/projects/8.jpeg"
+        },
+        {
+            "id": "automation-factory",
+            "title": "Factory Automation",
+            "category": "automation",
+            "shortDescription": "SCADA dashboard + predictive maintenance",
+            "longDescription": "Custom automation linking PLCs, conveyors, and robotic cells, complete with downtime analytics inside the DARI CONNECTER web app.",
+            "technologies": ["PLC", "SCADA", "MQTT"] ,
+            "image": "images/projects/9.jpeg"
+        },
+        {
+            "id": "robotics-lab",
+            "title": "Robotics Innovation Lab",
+            "category": "robotics",
+            "shortDescription": "AI-guided arms and AGV navigation",
+            "longDescription": "We integrated collaborative robots, AGVs, and computer vision nodes, all orchestrated via secure tunnels and tablet-friendly dashboards.",
+            "technologies": ["ROS", "AGV", "Edge TPU"],
+            "image": "images/projects/7.jpeg"
+        },
+        {
+            "id": "gallery-1",
+            "title": "Smart Home Showcase",
+            "category": "smart-home",
+            "shortDescription": "Modern living with intelligent lighting and climate control",
+            "longDescription": "A fully integrated smart home featuring voice-activated scenes, automated climate management, and energy monitoring through DARI CONNECTER.",
+            "technologies": ["ESP32", "Google Home", "OTA"],
+            "image": "images/projects/1.jpeg"
+        },
+        {
+            "id": "gallery-2",
+            "title": "Industrial Automation Hub",
+            "category": "automation",
+            "shortDescription": "Centralized control for manufacturing processes",
+            "longDescription": "Comprehensive automation solution with real-time monitoring, predictive maintenance, and remote management capabilities.",
+            "technologies": ["PLC", "SCADA", "MQTT"],
+            "image": "images/projects/2.jpeg"
+        },
+        {
+            "id": "gallery-3",
+            "title": "Arduino IoT Garden",
+            "category": "arduino",
+            "shortDescription": "Smart irrigation and environmental monitoring",
+            "longDescription": "Automated garden system with moisture sensors, weather integration, and mobile app control for optimal plant care.",
+            "technologies": ["Arduino Mega", "LoRa", "Node-RED"],
+            "image": "images/projects/4.jpeg"
+        },
+        {
+            "id": "gallery-4",
+            "title": "ESP32 Energy Monitor",
+            "category": "esp32",
+            "shortDescription": "Real-time power consumption tracking",
+            "longDescription": "Advanced energy monitoring system with detailed analytics, load balancing, and automated demand response capabilities.",
+            "technologies": ["ESP32", "Modbus", "MQTT"],
+            "image": "images/projects/5.jpeg"
+        },
+        {
+            "id": "gallery-5",
+            "title": "ESP8266 Smart Office",
+            "category": "esp8266",
+            "shortDescription": "Connected workplace automation",
+            "longDescription": "Office automation solution with smart lighting, climate control, occupancy sensing, and energy optimization features.",
+            "technologies": ["ESP8266", "OTA", "IFTTT"],
+            "image": "images/projects/8.jpeg"
+        },
+        {
+            "id": "gallery-6",
+            "title": "Robotics Assembly Line",
+            "category": "robotics",
+            "shortDescription": "Automated manufacturing with precision control",
+            "longDescription": "High-precision robotic assembly system with computer vision, quality control, and adaptive process optimization.",
+            "technologies": ["ROS", "AGV", "Edge TPU"],
+            "image": "images/projects/9.jpeg"
+        },
+        {
+            "id": "gallery-7",
+            "title": "Smart Villa Complex",
+            "category": "smart-home",
+            "shortDescription": "Multi-unit residential automation",
+            "longDescription": "Comprehensive smart home solution for villa complexes with centralized management, security systems, and energy efficiency.",
+            "technologies": ["ESP32", "KNX", "Google Home"],
+            "image": "images/projects/12.jpeg"
+        },
+        {
+            "id": "gallery-8",
+            "title": "Industrial Control Center",
+            "category": "automation",
+            "shortDescription": "Mission-critical facility management",
+            "longDescription": "Advanced control center for industrial facilities with redundant systems, real-time monitoring, and emergency response protocols.",
+            "technologies": ["PLC", "SCADA", "MQTT"],
+            "image": "images/projects/9.jpeg"
+        },
+        {
+            "id": "gallery-9",
+            "title": "Connected Campus Network",
+            "category": "esp32",
+            "shortDescription": "Campus-wide IoT infrastructure",
+            "longDescription": "Large-scale IoT deployment across educational campus with smart classrooms, energy management, and security integration.",
+            "technologies": ["ESP32", "MQTT", "PWA"],
+            "image": "images/projects/13.jpeg"
+        },
+        {
+            "id": "gallery-10",
+            "title": "Smart Building Control",
+            "category": "automation",
+            "shortDescription": "Integrated building management system",
+            "longDescription": "Comprehensive building automation with HVAC, lighting, security, and energy optimization controlled through DARI CONNECTER platform.",
+            "technologies": ["PLC", "SCADA", "MQTT"],
+            "image": "images/projects/3.jpeg"
+        },
+        {
+            "id": "gallery-11",
+            "title": "Advanced Robotics Workshop",
+            "category": "robotics",
+            "shortDescription": "Precision manufacturing with AI",
+            "longDescription": "State-of-the-art robotics facility featuring collaborative arms, vision systems, and real-time quality control with adaptive learning.",
+            "technologies": ["ROS", "AGV", "Edge TPU"],
+            "image": "images/projects/7.jpeg"
+        },
+        {
+            "id": "gallery-12",
+            "title": "Smart Healthcare Facility",
+            "category": "smart-home",
+            "shortDescription": "Hospital automation and monitoring",
+            "longDescription": "Healthcare facility with patient room automation, equipment tracking, and environmental monitoring for optimal care delivery.",
+            "technologies": ["ESP32", "KNX", "Google Home"],
+            "image": "images/projects/12.jpeg"
+        },
+        {
+            "id": "gallery-13",
+            "title": "Industrial IoT Gateway",
+            "category": "esp32",
+            "shortDescription": "Edge computing for industrial systems",
+            "longDescription": "High-performance edge gateway processing industrial telemetry with local analytics and cloud synchronization for real-time decision making.",
+            "technologies": ["ESP32", "MQTT", "PWA"],
+            "image": "images/projects/13.jpeg"
+        },
+        {
+            "id": "gallery-14",
+            "title": "Smart Manufacturing Plant",
+            "category": "automation",
+            "shortDescription": "Industry 4.0 production facility",
+            "longDescription": "Fully automated manufacturing plant with predictive maintenance, quality control, and optimized production scheduling through advanced analytics.",
+            "technologies": ["PLC", "SCADA", "MQTT"],
+            "image": "images/projects/14.jpeg"
+        }
+    ]
+}
