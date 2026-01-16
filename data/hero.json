@@ -4,7 +4,8 @@
     "subtitle": "Control lights, power outlets, sensors, and automation rituals from one intelligent mobile app built for Arduino, ESP32, ESP8266, and industrial IoT.",
     "primaryCta": {
         "label": "Download on Google Play",
-        "href": "#"
+        "href": "https://play.google.com/store/apps/details?id=com.FiveStarApp.Smart.Home.Connected",
+        "target": "_blank"
     },
     "secondaryCtas": [
         { "label": "View Projects", "href": "#gallery" },

@@ -19,7 +19,7 @@
             "shortDescription": "Ambient lighting scenes, voice control, and presence-driven automation",
             "longDescription": "We mapped 38 lighting circuits, integrated KNX dimmers with ESP32 gateways, and synced the entire home with voice scenes on Google Home & Alexa.",
             "technologies": ["ESP32", "KNX", "Google Home", "OTA"],
-            "image": "images/projects/10.jpeg"
+            "image": "images/projects/1.png"
         },
         {
             "id": "arduino-greenhouse",
@@ -28,7 +28,7 @@
             "shortDescription": "IoT irrigation, ventilation, and climate analytics",
             "longDescription": "Arduino Mega boards supervise irrigation valves, fans, and UV grow lights while DARI CONNECTER supplies dashboards and alerts via Android.",
             "technologies": ["Arduino Mega", "LoRa", "Node-RED"],
-            "image": "images/projects/11.jpeg"
+            "image": "images/projects/2.png"
         },
         {
             "id": "esp32-energy",
@@ -37,7 +37,7 @@
             "shortDescription": "Energy meters, harmonic analysis, and demand response",
             "longDescription": "ESP32 gateways stream Modbus telemetry to our cloud, delivering predictive load shedding and SMS alerts for a 2MW facility.",
             "technologies": ["ESP32", "Modbus", "MQTT", "PWA"],
-            "image": "images/projects/6.jpeg"
+            "image": "images/projects/3.png"
         },
         {
             "id": "esp8266-villa",
@@ -46,7 +46,7 @@
             "shortDescription": "Retrofit power outlets and HVAC control",
             "longDescription": "ESP8266 relays upgraded legacy switches, enabling geo-fenced cooling, plug load management, and OTA updates with zero downtime.",
             "technologies": ["ESP8266", "OTA", "IFTTT"],
-            "image": "images/projects/8.jpeg"
+            "image": "images/projects/4.png"
         },
         {
             "id": "automation-factory",
@@ -55,7 +55,7 @@
             "shortDescription": "SCADA dashboard + predictive maintenance",
             "longDescription": "Custom automation linking PLCs, conveyors, and robotic cells, complete with downtime analytics inside the DARI CONNECTER web app.",
             "technologies": ["PLC", "SCADA", "MQTT"] ,
-            "image": "images/projects/9.jpeg"
+            "image": "images/projects/5.png"
         },
         {
             "id": "robotics-lab",
@@ -64,7 +64,7 @@
             "shortDescription": "AI-guided arms and AGV navigation",
             "longDescription": "We integrated collaborative robots, AGVs, and computer vision nodes, all orchestrated via secure tunnels and tablet-friendly dashboards.",
             "technologies": ["ROS", "AGV", "Edge TPU"],
-            "image": "images/projects/7.jpeg"
+            "image": "images/projects/6.png"
         },
         {
             "id": "gallery-1",
@@ -73,7 +73,7 @@
             "shortDescription": "Modern living with intelligent lighting and climate control",
             "longDescription": "A fully integrated smart home featuring voice-activated scenes, automated climate management, and energy monitoring through DARI CONNECTER.",
             "technologies": ["ESP32", "Google Home", "OTA"],
-            "image": "images/projects/1.jpeg"
+            "image": "images/projects/7.png"
         },
         {
             "id": "gallery-2",

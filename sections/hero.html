@@ -10,11 +10,53 @@
             </div>
             <ul class="hero__metrics" data-list="metrics"></ul>
         </div>
-        <div class="hero__device" data-scroll-speed="0.35">
-            <div class="device-mockup">
-                <div class="device-mockup__screen" data-list="deviceStatus"></div>
+        <!-- Cube Swiper slider column (keeps original hero content intact) -->
+        <div class="hero__visual" data-scroll-speed="0.1">
+            <div class="hero-cube" data-hero-cube>
+                <!-- Swiper container with cube effect faces -->
+                <div class="hero-cube__frame">
+                    <div class="swiper hero-cube__slider" aria-live="polite">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide hero-cube__slide">
+                                <img src="images/hero/0.jpeg" alt="Connected home overview UI" loading="lazy" />
+                            </div>
+                            <div class="swiper-slide hero-cube__slide">
+                                <img src="images/hero/1.jpeg" alt="Energy usage analytics" loading="lazy" />
+                            </div>
+                            <div class="swiper-slide hero-cube__slide">
+                                <img src="images/hero/2.jpeg" alt="Automation scene builder" loading="lazy" />
+                            </div>
+                            <div class="swiper-slide hero-cube__slide">
+                                <img src="images/hero/3.jpeg" alt="Security camera grid" loading="lazy" />
+                            </div>
+                            <div class="swiper-slide hero-cube__slide">
+                                <img src="images/hero/4.jpeg" alt="Room controls dashboard" loading="lazy" />
+                            </div>
+                            <div class="swiper-slide hero-cube__slide">
+                                <img src="images/hero/5.jpeg" alt="Lighting presets selector" loading="lazy" />
+                            </div>
+                            <div class="swiper-slide hero-cube__slide">
+                                <img src="images/hero/6.jpeg" alt="Climate automation settings" loading="lazy" />
+                            </div>
+                            <div class="swiper-slide hero-cube__slide">
+                                <img src="images/hero/7.jpeg" alt="Appliance control tiles" loading="lazy" />
+                            </div>
+                            <div class="swiper-slide hero-cube__slide">
+                                <img src="images/hero/8.jpeg" alt="Wellness monitoring interface" loading="lazy" />
+                            </div>
+                            <div class="swiper-slide hero-cube__slide">
+                                <img src="images/hero/9.jpeg" alt="Automation timeline view" loading="lazy" />
+                            </div>
+                            <div class="swiper-slide hero-cube__slide">
+                                <img src="images/hero/10.jpeg" alt="Device diagnostics panel" loading="lazy" />
+                            </div>
+                        </div>
+                        <div class="swiper-pagination hero-cube__pagination" aria-label="Cube slider pagination"></div>
+                        <button class="swiper-button-prev hero-cube__arrow hero-cube__arrow--prev" aria-label="Previous screenshot"></button>
+                        <button class="swiper-button-next hero-cube__arrow hero-cube__arrow--next" aria-label="Next screenshot"></button>
+                    </div>
+                </div>
             </div>
-            <div class="hero__badge-stack" data-list="badges"></div>
         </div>
     </div>
 </section>

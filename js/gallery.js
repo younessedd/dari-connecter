@@ -17,6 +17,7 @@ const buildGalleryCard = (project) => {
             <span class="gallery-card__tag">${project.category}</span>
             <h3 class="gallery-card__title">${project.title}</h3>
             <p>${project.shortDescription}</p>
+            <a href="#" class="gallery-card__read-more" data-project-id="${project.id}">Read more</a>
         </div>
     `;
     return card;
@@ -80,6 +81,21 @@ const bindCardClicks = (root) => {
     root.addEventListener("click", (event) => {
         const card = event.target.closest(".gallery-card");
         if (!card) return;
+        
+        const readMoreLink = event.target.closest(".gallery-card__read-more");
+        if (readMoreLink) {
+            event.preventDefault();
+            const projectId = readMoreLink.dataset.projectId;
+            const project = galleryState.projects.find((p) => p.id === projectId);
+            if (!project) return;
+            window.dispatchEvent(
+                new CustomEvent("gallery:open", {
+                    detail: { project },
+                })
+            );
+            return;
+        }
+        
         const project = galleryState.projects.find((p) => p.id === card.dataset.projectId);
         if (!project) return;
         window.dispatchEvent(

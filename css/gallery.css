@@ -3,6 +3,14 @@
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
+    position: sticky;
+    top: 20px;
+    z-index: 50;
+    background: rgba(6, 8, 16, 0.8);
+    padding: 12px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
 }
 
 .gallery-filter {
@@ -49,7 +57,20 @@
     padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
+}
+
+.gallery-card__read-more {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: auto;
+    transition: color 0.2s ease;
+}
+
+.gallery-card__read-more:hover {
+    color: var(--accent-2);
 }
 
 .gallery-card__tag {
